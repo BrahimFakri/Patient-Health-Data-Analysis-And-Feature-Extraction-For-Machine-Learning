@@ -32,14 +32,3 @@ Copy the unzipped folders  to [csvs](csvs).
 
 
 
-Number of unique subject_id in the Patient table :
-382278
-
-Number of unique subject_id in the mimic_cxr_chexpert table :
-65379
-
-Number of unique subject_id in the mimic_cxr_metadata table :
-65379
-
-Number of unique dicom_id in the mimic_cxr_metadata table :
-377110
