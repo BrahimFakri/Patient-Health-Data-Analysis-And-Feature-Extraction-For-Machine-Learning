@@ -5,12 +5,12 @@ We here try to replicate the embeddings generation from the [HAIM multimodal dat
 
 For more details about the different tables and column names, please refere to MIMIC video tutorials at : [MIMIC Tutorial](https://mimic.mit.edu/docs/iv/tutorials/video/)
 
-(Johnson, A., Bulgarelli, L., Pollard, T., Horng, S., Celi, L. A., & Mark, R. (2021). MIMIC-IV (version 1.0). PhysioNet. https://doi.org/10.13026/s6n6-xd98.)
-
 
 Below is an overview of the different MIMIC modules and their link to different patient movements throught the hospital: 
 
 ![image](https://user-images.githubusercontent.com/119059452/218730593-784ea8a1-cc9c-440e-a30f-9595b2be212b.png)
+
+[REFERENCE](Johnson, A., Bulgarelli, L., Pollard, T., Horng, S., Celi, L. A., & Mark, R. (2021). MIMIC-IV (version 1.0). PhysioNet. https://doi.org/10.13026/s6n6-xd98.)
 
 
 ## Some important data facts
