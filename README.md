@@ -23,3 +23,16 @@ Download:
 - MIMIC-IV v1.0 (https://physionet.org/content/mimiciv/1.0/
 
 Copy the unzipped folders  to [csvs](csvs).
+
+
+## General data exploratory analysis
+
+Number of unique subject_id in the Patient table :
+382278
+
+Number of unique subject_id in the mimic_cxr_chexpert table :
+65379
+
+Number of unique dicom_id and subject_id in the mimic_cxr_metadata table :
+377110
+65379
