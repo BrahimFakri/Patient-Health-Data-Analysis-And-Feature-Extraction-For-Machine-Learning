@@ -33,6 +33,8 @@ Number of unique subject_id in the Patient table :
 Number of unique subject_id in the mimic_cxr_chexpert table :
 65379
 
-Number of unique dicom_id and subject_id in the mimic_cxr_metadata table :
-377110
+Number of unique subject_id in the mimic_cxr_metadata table :
 65379
+
+Number of unique dicom_id in the mimic_cxr_metadata table :
+377110
