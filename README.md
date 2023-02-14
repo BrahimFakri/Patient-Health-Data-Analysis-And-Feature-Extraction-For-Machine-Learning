@@ -27,6 +27,11 @@ Copy the unzipped folders  to [csvs](csvs).
 
 ## General data exploratory analysis
 
+
+![image](https://user-images.githubusercontent.com/119059452/218734792-5f59156f-e808-483f-8cdb-f22b1b7909d9.png)
+
+
+
 Number of unique subject_id in the Patient table :
 382278
 
