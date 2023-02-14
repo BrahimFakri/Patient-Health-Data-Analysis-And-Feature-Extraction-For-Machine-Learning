@@ -13,6 +13,12 @@ Below is an overview of the different MIMIC modules and their link to different 
 ![image](https://user-images.githubusercontent.com/119059452/218730593-784ea8a1-cc9c-440e-a30f-9595b2be212b.png)
 
 
+## General data exploratory analysis
+
+
+![image](https://user-images.githubusercontent.com/119059452/218734792-5f59156f-e808-483f-8cdb-f22b1b7909d9.png)
+
+
 
 ## Instructions on how to use the codes in the repository
 
@@ -23,12 +29,3 @@ Download:
 - MIMIC-IV v1.0 (https://physionet.org/content/mimiciv/1.0/
 
 Copy the unzipped folders  to [csvs](csvs).
-
-
-## General data exploratory analysis
-
-
-![image](https://user-images.githubusercontent.com/119059452/218734792-5f59156f-e808-483f-8cdb-f22b1b7909d9.png)
-
-
-
