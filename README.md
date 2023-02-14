@@ -20,7 +20,7 @@ Below is an overview of the different MIMIC modules and their link to different 
 
 
 
-## Instructions on how to use the codes in the repository
+## Instructions on how to use the repository
 
 The datasets used to replicate the embeddings generation are publicly available at: [physionet](https://physionet.org/content/haim-multimodal/1.0.1/). 
 
