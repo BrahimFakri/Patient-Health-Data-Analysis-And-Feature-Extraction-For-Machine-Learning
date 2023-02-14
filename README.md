@@ -28,4 +28,4 @@ Download:
 - MIMIC-CXR-JPG - chest radiographs with structured labels v2.0.0 (https://physionet.org/content/mimic-cxr-jpg/2.0.0/)
 - MIMIC-IV v1.0 (https://physionet.org/content/mimiciv/1.0/
 
-Copy the unzipped folders  to [csvs](csvs).
+Copy the unzipped folders  to [csvs](csvs)
