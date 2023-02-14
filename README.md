@@ -34,5 +34,5 @@ Copy the unzipped folders  to [csvs](csvs)
 ## Steps of our work
 
 In this repository, we intent to gradually provide five jupyter notebooks. Each of the first four will be for a data modality and the last one will be for all modalities.
-For the predictions based on the original HAIM embeddings, please refer to the work of Hakima Laribi [HAIM] (https://github.com/MEDomics-UdeS/HAIM).
+For the predictions based on the original HAIM embeddings, please refer to the work of Hakima Laribi [HAIM](https://github.com/MEDomics-UdeS/HAIM).
 
