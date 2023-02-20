@@ -41,3 +41,6 @@ mimic_cxr_chexpert = 'csvs/mimic-cxr-jpg-chest-radiographs-with-structured-label
 mimic_cxr_metadata = 'csvs/mimic-cxr-jpg-chest-radiographs-with-structured-labels-2.0.0/mimic-cxr-2.0.0-metadata.csv'
 mimic_cxr_negbio = 'csvs/mimic-cxr-jpg-chest-radiographs-with-structured-labels-2.0.0/mimic-cxr-2.0.0-negbio.csv'
 mimic_cxr_split = 'csvs/mimic-cxr-jpg-chest-radiographs-with-structured-labels-2.0.0/mimic-cxr-2.0.0-split.csv'
+
+#Sample10 patients
+icu_cxr_patients_sample10 = 'csvs/icu_cxr_patients_sample10.csv'
