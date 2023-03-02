@@ -21,6 +21,9 @@ Below is an overview of the different MIMIC modules and their link to different 
 
 ## Some important data facts
 
+![image](https://user-images.githubusercontent.com/119059452/222307830-e4273432-dc2f-433b-bae4-7c7493ac33f8.png)
+
+
 
 ![image](https://user-images.githubusercontent.com/119059452/218784248-d562515f-7e85-49d7-a359-285e63093aea.png)
 
