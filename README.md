@@ -12,7 +12,7 @@ Below is an overview of the different MIMIC modules and their link to different 
 
 (Johnson, A., Bulgarelli, L., Pollard, T., Horng, S., Celi, L. A., & Mark, R. (2021). MIMIC-IV (version 1.0).PhysioNet. https://doi.org/10.13026/s6n6-xd98.).
 
-## Relationship between different MIMICV tables
+## Relationship between different mimiv core and icu tables
 
 
 ![Relationship diagram](https://user-images.githubusercontent.com/119059452/222306118-e92ee85d-18e3-4eaa-99dd-d252dc876735.png)
