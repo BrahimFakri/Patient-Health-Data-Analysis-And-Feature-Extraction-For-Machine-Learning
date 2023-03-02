@@ -18,8 +18,6 @@ Below is an overview of the different MIMIC modules and their link to different 
 ![Relationship diagram](https://user-images.githubusercontent.com/119059452/222306118-e92ee85d-18e3-4eaa-99dd-d252dc876735.png)
 
 
-![image](https://user-images.githubusercontent.com/119059452/222307830-e4273432-dc2f-433b-bae4-7c7493ac33f8.png)
-
 
 ## Some important data facts
 
