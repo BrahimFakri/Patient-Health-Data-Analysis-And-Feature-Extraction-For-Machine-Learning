@@ -1,7 +1,8 @@
 
 
 # Files where the dataset is stored
-
+  
+    
 # CORE
 admissions = 'csvs/mimic-iv-1.0/core/admissions.csv'
 patients = 'csvs/mimic-iv-1.0/core/patients.csv'
@@ -42,5 +43,49 @@ mimic_cxr_metadata = 'csvs/mimic-cxr-jpg-chest-radiographs-with-structured-label
 mimic_cxr_negbio = 'csvs/mimic-cxr-jpg-chest-radiographs-with-structured-labels-2.0.0/mimic-cxr-2.0.0-negbio.csv'
 mimic_cxr_split = 'csvs/mimic-cxr-jpg-chest-radiographs-with-structured-labels-2.0.0/mimic-cxr-2.0.0-split.csv'
 
+#Tables
+
+tables = [admissions,patients,transfers]
+
+
 #Sample10 patients
+cohort = ['14811141','18874374','11272213','13762583','18087960','13500443','12189736','14024750','19136566','18481208']
+
 icu_cxr_patients_sample10 = 'csvs/icu_cxr_patients_sample10.csv'
+
+# Example of subject_id in icu and cxr:
+
+subject_id_example = 10216097
+
+# Chart events of interest
+chart_event_list = ['Heart Rate','Non Invasive Blood Pressure systolic',
+                    'Non Invasive Blood Pressure diastolic', 'Non Invasive Blood Pressure mean', 
+                    'Respiratory Rate','O2 saturation pulseoxymetry', 
+                    'GCS - Verbal Response', 'GCS - Eye Opening', 'GCS - Motor Response'] 
+
+# Chart events of interest
+lab_event_list = ['Glucose', 'Potassium', 'Sodium', 'Chloride', 'Creatinine',
+           'Urea Nitrogen', 'Bicarbonate', 'Anion Gap', 'Hemoglobin', 'Hematocrit',
+           'Magnesium', 'Platelet Count', 'Phosphate', 'White Blood Cells',
+           'Calcium, Total', 'MCH', 'Red Blood Cells', 'MCHC', 'MCV', 'RDW', 
+                      'Platelet Count', 'Neutrophils', 'Vancomycin']
+
+# Procedure events of interest
+procedure_event_list = ['Foley Catheter', 'PICC Line', 'Intubation', 'Peritoneal Dialysis', 
+                            'Bronchoscopy', 'EEG', 'Dialysis - CRRT', 'Dialysis Catheter', 
+                            'Chest Tube Removed', 'Hemodialysis']
+
+# TSFRESH FC PARAMETERS
+fc_parameters = {"length": None,
+                    "absolute_sum_of_changes": None, 
+                    "maximum": None, 
+                    "mean": None,
+                    "mean_abs_change": None,
+                    "mean_change": None,
+                    "median": None,
+                    "minimum": None,
+                    "standard_deviation": None,
+                    "variance": None,
+                    "large_standard_deviation": [{"r": r * 0.2} for r in range(1, 5)],
+                    "quantile": [{"q": q} for q in [.25, .5, .75, 1]],
+                    "linear_trend": [{"attr": "pvalue"}, {"attr": "rvalue"}, {"attr": "intercept"},{"attr": "slope"}, {"attr": "stderr"}]}
