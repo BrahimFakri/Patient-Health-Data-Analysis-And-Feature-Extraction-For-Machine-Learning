@@ -49,7 +49,8 @@ tables = [admissions,patients,transfers]
 
 
 #Sample10 patients
-cohort = ['14811141','18874374','11272213','13762583','18087960','13500443','12189736','14024750','19136566','18481208']
+cohort = [10004235, 10004720, 10019003, 10020852, 10023708, 10031358, 10035631, 10046166, 10047172, 10051990]
+
 
 icu_cxr_patients_sample10 = 'csvs/icu_cxr_patients_sample10.csv'
 
