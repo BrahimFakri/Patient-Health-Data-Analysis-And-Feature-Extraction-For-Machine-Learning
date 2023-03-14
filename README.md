@@ -38,6 +38,9 @@ Download:
 
 Copy the unzipped folders  to [csvs](csvs)
 
+In order to generate embeddings, we based our codes on subject_id. The user can also opt for stay_id embeddings generation. However, this can generate 
+multiple rows for the same patient in terms of time series analysis. 
+Data related to time of events will be spread on multiple rows, and machine learning algorithms might generate erroneous predictions.
 
 ## Steps of our work
 
