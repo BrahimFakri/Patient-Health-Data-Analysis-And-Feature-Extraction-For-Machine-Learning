@@ -1,7 +1,7 @@
 """
 Filename: Extract_features_all_events.py
 Author : Brahim Fakri
-Description: This file is used to define functions used for embeddings extraction
+Description: This file is used to define functions used for time series embeddings  extraction
 Date of last modification : 2023/03/20
 """
 
@@ -15,10 +15,10 @@ import tsfresh
 from tsfresh import extract_features
 
 
-    '''
-    Function extract_chart_events that transforms chartevents to features
-    
-    '''
+'''
+Function extract_chart_events that transforms chartevents to features
+
+'''
 
 def extract_chart_events(source, patient):
     
@@ -55,8 +55,6 @@ def extract_chart_events(source, patient):
     chart_extracted_features = ["chart_extracted_features"+str(i) for i in range(len(constants.chart_event_list))]
     for i in range(len(chart_extracted_features)):
         exec("%s = %d" % (chart_extracted_features[i] ,0))
-
-    #####
     
     # Filtering chart events by events of interest from chart event list
     for i in range(len(df_chartevents_subject_id_example_events)):
@@ -85,10 +83,10 @@ def extract_chart_events(source, patient):
 
 
 
-    '''
-    Function extract_lab_events that transforms lab events to features
-    
-    '''
+'''
+Function extract_lab_events that transforms lab events to features
+
+'''
 
 def extract_lab_events(source, patient):
     
@@ -136,7 +134,11 @@ def extract_lab_events(source, patient):
         lab_series[i] = df_labevents_subject_id_example_events[i][["subject_id","charttime",constants.lab_event_list[i]]]
 
         # Extraction of the features using TS Fresh
-        lab_extracted_features[i] = extract_features(lab_series[i], column_id="subject_id", column_sort="charttime", default_fc_parameters = constants.fc_parameters)
+        try:
+            lab_extracted_features[i] = extract_features(lab_series[i], column_id="subject_id", column_sort="charttime", default_fc_parameters = constants.fc_parameters)
+        
+        except ZeroDivisionError:
+            lab_extracted_features[i] = pd.DataFrame()
 
 
     # Concatenation of the extracted features
@@ -147,26 +149,21 @@ def extract_lab_events(source, patient):
 
 
 
+'''
+Function extract_procedure_events that transforms procedure events to features
 
-
-#extract_lab_events(constants.labevents, constants.subject_id_example)
-
-
-    '''
-    Function extract_procedure_events that transforms procedure events to features
-    
-    '''
+'''
 
 
 
 def extract_procedure_events(source, patient):
-    
+
     # Reading the procedureevents csv file 
     df_procedureevents =read_csv(source)
-    
+
     # Converting the charttime column to datetime type
     df_procedureevents.storetime = pd.to_datetime(df_procedureevents.storetime)
-    
+
     # filling missing values with 0 as instructed by the study
     df_procedureevents['value'] = df_procedureevents['value'].fillna(0)
 
@@ -175,17 +172,17 @@ def extract_procedure_events(source, patient):
 
     # filtering the dataset to include only the desired patient to study
     df_procedureevents_subject_id_example = df_procedureevents[df_procedureevents["subject_id"] == patient]
-    
+
     # Creating a list of variable names to be used to store procedureevents
     df_procedureevents_subject_id_example_events=["df_procedureevents_subject_id_example_events"+str(i) for i in                                              range(len(constants.procedure_event_list))]
     for i in range(len(df_procedureevents_subject_id_example_events)):
         exec("%s = %d" % (df_procedureevents_subject_id_example_events[i] ,0))
-        
+
     # Creating a list of variable names to be used to store procedure series
     procedure_series=["procedure_series"+str(i) for i in range(len(constants.procedure_event_list))]
     for i in range(len(procedure_series)):
         exec("%s = %d" % (procedure_series[i] ,0))
-        
+
     # Creating a list of variable names to be used to store procedure extracted features
     procedure_extracted_features = ["procedure_extracted_features"+str(i) for i in range(len(constants.procedure_event_list))]
     for i in range(len(procedure_extracted_features)):
@@ -202,14 +199,20 @@ def extract_procedure_events(source, patient):
     # Creation of chart series to be used with TS Fresh
     for i in range(len(df_procedureevents_subject_id_example_events)):
         procedure_series[i] = df_procedureevents_subject_id_example_events[i][["subject_id","storetime",constants.procedure_event_list[i]]]
-        
-        # Extraction of the features using TS Fresh
-        procedure_extracted_features[i] = extract_features(procedure_series[i], column_id="subject_id", column_sort="storetime", default_fc_parameters = constants.fc_parameters)
 
+        # Extraction of the features using TS Fresh
+        try:
+            procedure_extracted_features[i] = extract_features(procedure_series[i], column_id="subject_id", column_sort="storetime", default_fc_parameters = constants.fc_parameters)
+        
+        except ZeroDivisionError:
+            procedure_extracted_features[i] = pd.DataFrame()
 
 
     # Concatenation of the extracted features
     procedure_extracted_features_concat = pd.concat(procedure_extracted_features, axis=1)
+
+
+        
 
     # Return the concatenated dataframe
     return procedure_extracted_features_concat
