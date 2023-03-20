@@ -1,7 +1,12 @@
-
-
-# Files where the dataset is stored
+"""
+Filename: constants.py
+Author : Brahim Fakri
+Description: This file is used to store constants
+Date of last modification : 2023/03/20
+"""
   
+
+'''Links to datasets'''
     
 # CORE
 admissions = 'csvs/mimic-iv-1.0/core/admissions.csv'
@@ -90,3 +95,7 @@ fc_parameters = {"length": None,
                     "large_standard_deviation": [{"r": r * 0.2} for r in range(1, 5)],
                     "quantile": [{"q": q} for q in [.25, .5, .75, 1]],
                     "linear_trend": [{"attr": "pvalue"}, {"attr": "rvalue"}, {"attr": "intercept"},{"attr": "slope"}, {"attr": "stderr"}]}
+
+# NROWS to avoid memory issues in jupyter notebook
+NROWS = 50000000
+
