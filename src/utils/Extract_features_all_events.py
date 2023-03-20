@@ -40,7 +40,7 @@ def extract_chart_events(source, patient):
     
     
     # Creating a list of variable names to be used to store chartevents
-    df_chartevents_subject_id_example_events=["df_chartevents_subject_id_example_events"+str(i) for i in                                              range(len(constants.chart_event_list))]
+    df_chartevents_subject_id_example_events=["df_chartevents_subject_id_example_events"+str(i) for i in range(len(constants.chart_event_list))]
     for i in range(len(df_chartevents_subject_id_example_events)):
         exec("%s = %d" % (df_chartevents_subject_id_example_events[i] ,0))
         
@@ -106,7 +106,7 @@ def extract_lab_events(source, patient):
     df_labevents_subject_id_example = df_labevents[df_labevents["subject_id"] == patient]
 
     # Creating a list of variable names to be used to store labevents
-    df_labevents_subject_id_example_events=["df_labevents_subject_id_example_events"+str(i) for i in                                              range(len(constants.lab_event_list))]
+    df_labevents_subject_id_example_events=["df_labevents_subject_id_example_events"+str(i) for i in  range(len(constants.lab_event_list))]
     for i in range(len(df_labevents_subject_id_example_events)):
         exec("%s = %d" % (df_labevents_subject_id_example_events[i] ,0))
 
@@ -174,7 +174,7 @@ def extract_procedure_events(source, patient):
     df_procedureevents_subject_id_example = df_procedureevents[df_procedureevents["subject_id"] == patient]
 
     # Creating a list of variable names to be used to store procedureevents
-    df_procedureevents_subject_id_example_events=["df_procedureevents_subject_id_example_events"+str(i) for i in                                              range(len(constants.procedure_event_list))]
+    df_procedureevents_subject_id_example_events=["df_procedureevents_subject_id_example_events"+str(i) for i in range(len(constants.procedure_event_list))]
     for i in range(len(df_procedureevents_subject_id_example_events)):
         exec("%s = %d" % (df_procedureevents_subject_id_example_events[i] ,0))
 
