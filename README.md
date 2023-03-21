@@ -34,6 +34,15 @@ To produce these number, we used the notebook ```general dataset exploration.ipy
 ![image](https://user-images.githubusercontent.com/119059452/218784248-d562515f-7e85-49d7-a359-285e63093aea.png)
 
 
+The summary table shows for example that we have 382278 unique subject_id in the table patient (created from the csv file patients.csv). However, in the icustays table, we only have 53150 unique subject_id, meaning that not all patients in the database have icu stays.
+
+Also, we notice that not all patients have chest radiology images: only 65379 unique subject_id in the mimic_cxr_chexpert table.
+
+So in order to find the patients who have both icu stays and chest radiology images, we ran the notebook ```icu_cxr_patients.ipynb``` and find that the number of patients with both a chest radiology image and an icu stay is:  
+
+```
+20245
+```
 
 
 ## Instructions on how to use the repository
