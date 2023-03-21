@@ -40,18 +40,20 @@ class Event_extraction:
         ''' 
         
     def extract_chart_events(self, patient):
+        
+        # Read data from local source
         df_chartevents =read_csv(constants.chartevents, dtype={'value': 'object', 'valueuom': 'object'}, nrows = constants.NROWS)
 
         # Converting the charttime column to datetime type
         df_chartevents.charttime = pd.to_datetime(df_chartevents.charttime)
 
-        # filling missing values with 0 as instructed by the study
+        # Filling missing values with 0 as instructed by the study
         df_chartevents['valuenum'] = df_chartevents['valuenum'].fillna(0)
 
         # Reading the d_items csv file that contains the description of all chart events
         df_d_items = pd.read_csv(constants.d_items)
 
-        # filtering the dataset to include only the desired patient to study
+        # Filtering the dataset to include only the desired patient to study
         df_chartevents_subject_id_example = df_chartevents[df_chartevents["subject_id"] == patient]
 
 
@@ -273,9 +275,11 @@ class Demographic_extraction:
 
         df_core_icu_fusion = df_core_fusion.merge(df_icustays, on=('subject_id', 'hadm_id'))
 
+
         # CXR dataset fusion merge
 
         df_cxr_merged = df_mimic_cxr_chexpert.merge(df_mimic_cxr_metadata, on= ('subject_id', 'study_id'))
+
 
         # Merging Core, ICU and CXR
 
@@ -296,7 +300,7 @@ class Demographic_extraction:
                   df_core_icu_cxr_fusion['de_'+str(i+1)] = le.fit_transform(df_core_icu_cxr_fusion['de_'+str(i+1)])
 
 
-        # dropping undesired labels
+        # dropping undesired features
         df_core_icu_cxr_fusion = df_core_icu_cxr_fusion.drop(['anchor_age', 'gender', 'ethnicity', 'marital_status', 'language', 'insurance'], axis=1)
 
         # Creating the target : Death Status
