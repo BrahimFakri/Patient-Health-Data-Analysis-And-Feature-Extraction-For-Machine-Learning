@@ -19,14 +19,14 @@ Install the requirements under **Python 3.9.13** as following:
 $ pip install -r requirements.txt
 ```
 
-In order to generate embeddings, we based our codes on subject_id. The user can also opt for stay_id embeddings generation. However, this can generate 
-multiple rows for the same patient in terms of time series analysis. 
-Data related to time of events will be spread on multiple rows, and machine learning algorithms might generate erroneous predictions.
-
 
 ## 3. Steps of our work
 
 In this repository, we intent to gradually provide five jupyter notebooks. Each of the first four will be for a data modality and the last one will be for all modalities.
+
+In order to generate embeddings, we based our codes on subject_id. The user can also opt for stay_id embeddings generation. However, this can generate 
+multiple rows for the same patient in terms of time series analysis. 
+Data related to time of events will be spread on multiple rows, and machine learning algorithms might generate erroneous predictions.
 
 ## 4. Datasources description
 
