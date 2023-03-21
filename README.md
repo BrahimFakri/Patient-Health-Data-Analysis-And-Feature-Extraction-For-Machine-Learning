@@ -3,10 +3,16 @@
 This is an open-source python repository that is based on the the [HAIM GitHub package](https://github.com/lrsoenksen/HAIM.git) study. 
 We here try to replicate the embeddings generation from the [HAIM multimodal dataset](https://physionet.org/content/haim-multimodal/1.0.1/) containing data of 4 modalities (tabular, time-series, text and images) and 11 unique sources.
 
+## Steps of our work
+
+In this repository, we intent to gradually provide five jupyter notebooks. Each of the first four will be for a data modality and the last one will be for all modalities.
+
+## Datasources description
+
 For more details about the different tables and column names, please refere to MIMIC video tutorials at : [MIMIC Tutorial](https://mimic.mit.edu/docs/iv/tutorials/video/)
 
 
-Below is an overview of the different MIMIC modules and their link to different patient movements throught the hospital: 
+Below is an overview of the different MIMIC modules and their link to different patient movements through the hospital: 
 
 ![image](https://user-images.githubusercontent.com/119059452/218730593-784ea8a1-cc9c-440e-a30f-9595b2be212b.png)
 
@@ -21,7 +27,9 @@ Below is an overview of the different MIMIC modules and their link to different 
 
 ## Some important data facts
 
+Below is table in which we summarize important information about the most important tables used in the embeddings generation.
 
+To produce these number, we used the notebook ```general dataset exploration.ipynb``` in the folder ``notebooks`` 
 
 ![image](https://user-images.githubusercontent.com/119059452/218784248-d562515f-7e85-49d7-a359-285e63093aea.png)
 
@@ -42,8 +50,5 @@ In order to generate embeddings, we based our codes on subject_id. The user can 
 multiple rows for the same patient in terms of time series analysis. 
 Data related to time of events will be spread on multiple rows, and machine learning algorithms might generate erroneous predictions.
 
-## Steps of our work
 
-In this repository, we intent to gradually provide five jupyter notebooks. Each of the first four will be for a data modality and the last one will be for all modalities.
-For the predictions based on the original HAIM embeddings, please refer to the work of Hakima Laribi [HAIM](https://github.com/MEDomics-UdeS/HAIM).
 
