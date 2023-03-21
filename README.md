@@ -3,6 +3,21 @@
 This is an open-source python repository that is based on the the [HAIM GitHub package](https://github.com/lrsoenksen/HAIM.git) study. 
 We here try to replicate the embeddings generation from the [HAIM multimodal dataset](https://physionet.org/content/haim-multimodal/1.0.1/) containing data of 4 modalities (tabular, time-series, text and images) and 11 unique sources.
 
+## Instructions on how to use the repository
+
+The datasets used to replicate the embeddings generation are publicly available at: [physionet](https://physionet.org/content/haim-multimodal/1.0.1/). 
+
+Download:
+- MIMIC-CXR-JPG - chest radiographs with structured labels v2.0.0 (https://physionet.org/content/mimic-cxr-jpg/2.0.0/)
+- MIMIC-IV v1.0 (https://physionet.org/content/mimiciv/1.0/
+
+Copy the unzipped folders  to [csvs](csvs)
+
+In order to generate embeddings, we based our codes on subject_id. The user can also opt for stay_id embeddings generation. However, this can generate 
+multiple rows for the same patient in terms of time series analysis. 
+Data related to time of events will be spread on multiple rows, and machine learning algorithms might generate erroneous predictions.
+
+
 ## Steps of our work
 
 In this repository, we intent to gradually provide five jupyter notebooks. Each of the first four will be for a data modality and the last one will be for all modalities.
@@ -41,19 +56,6 @@ Also, we notice that not all patients have chest radiology images: only 65379 un
 So in order to find the patients who have both icu stays and chest radiology images, we ran the notebook ```icu_cxr_patients.ipynb``` and find that the number of patients with both a chest radiology image and an icu stay is:  ```20245```
 
 
-## Instructions on how to use the repository
-
-The datasets used to replicate the embeddings generation are publicly available at: [physionet](https://physionet.org/content/haim-multimodal/1.0.1/). 
-
-Download:
-- MIMIC-CXR-JPG - chest radiographs with structured labels v2.0.0 (https://physionet.org/content/mimic-cxr-jpg/2.0.0/)
-- MIMIC-IV v1.0 (https://physionet.org/content/mimiciv/1.0/
-
-Copy the unzipped folders  to [csvs](csvs)
-
-In order to generate embeddings, we based our codes on subject_id. The user can also opt for stay_id embeddings generation. However, this can generate 
-multiple rows for the same patient in terms of time series analysis. 
-Data related to time of events will be spread on multiple rows, and machine learning algorithms might generate erroneous predictions.
 
 
 
