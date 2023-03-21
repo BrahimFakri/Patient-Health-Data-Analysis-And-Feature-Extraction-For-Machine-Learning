@@ -29,7 +29,7 @@ Below is an overview of the different MIMIC modules and their link to different 
 
 Below is table in which we summarize important information about the most important tables used in the embeddings generation.
 
-To produce these number, we used the notebook ```general dataset exploration.ipynb``` in the folder ``notebooks`` 
+To produce these number, we used the notebook ```general dataset exploration.ipynb``` in the folder [notebooks](notebooks)
 
 ![image](https://user-images.githubusercontent.com/119059452/218784248-d562515f-7e85-49d7-a359-285e63093aea.png)
 
