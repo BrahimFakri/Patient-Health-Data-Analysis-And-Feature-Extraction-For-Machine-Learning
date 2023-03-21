@@ -38,11 +38,7 @@ The summary table shows for example that we have 382278 unique subject_id in the
 
 Also, we notice that not all patients have chest radiology images: only 65379 unique subject_id in the mimic_cxr_chexpert table.
 
-So in order to find the patients who have both icu stays and chest radiology images, we ran the notebook ```icu_cxr_patients.ipynb``` and find that the number of patients with both a chest radiology image and an icu stay is:  
-
-```
-20245
-```
+So in order to find the patients who have both icu stays and chest radiology images, we ran the notebook ```icu_cxr_patients.ipynb``` and find that the number of patients with both a chest radiology image and an icu stay is:  ```20245```
 
 
 ## Instructions on how to use the repository
