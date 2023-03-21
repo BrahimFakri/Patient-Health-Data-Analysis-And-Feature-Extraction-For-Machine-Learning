@@ -269,17 +269,17 @@ class Demographic_extraction:
 
         df_core_fusion = df_admissions.merge(df_patients, on=("subject_id")).merge(df_transfers, on=('subject_id', 'hadm_id'))
 
-
+        # Merge core and icu
 
         df_core_icu_fusion = df_core_fusion.merge(df_icustays, on=('subject_id', 'hadm_id'))
 
 
-        # CXR dataset fusion
+        # CXR dataset fusion merge
 
         df_cxr_merged = df_mimic_cxr_chexpert.merge(df_mimic_cxr_metadata, on= ('subject_id', 'study_id'))
 
 
-        # Core_ICU_CXR Fusion
+        # Merging Core, ICU and CXR
 
         df_core_icu_cxr_fusion = df_core_icu_fusion.merge(df_cxr_merged, on=("subject_id"))
 
@@ -298,15 +298,16 @@ class Demographic_extraction:
                   df_core_icu_cxr_fusion['de_'+str(i+1)] = le.fit_transform(df_core_icu_cxr_fusion['de_'+str(i+1)])
 
 
+        # dropping undesired labels
         df_core_icu_cxr_fusion = df_core_icu_cxr_fusion.drop(['anchor_age', 'gender', 'ethnicity', 'marital_status', 'language', 'insurance'], axis=1)
 
-
+        # Creating the target : Death Status
         df_core_icu_cxr_fusion['death_status'] = np.where(df_core_icu_cxr_fusion['discharge_location'] == 'DIED' ,1,0)
 
-
+        # Dropping Discharge Location label
         df_core_icu_cxr_fusion = df_core_icu_cxr_fusion.drop(['discharge_location'], axis =1)
 
-
+        # Rearranging the fusion dataframe with the right columns order
         df_core_icu_cxr_fusion = df_core_icu_cxr_fusion.loc[: , ['subject_id', 'hadm_id','stay_id',  'admittime','de_0', 'de_1', 'de_2',
                'de_3', 'de_4', 'de_5', 'death_status', 'study_id', 'Atelectasis', 'Cardiomegaly', 'Consolidation',
                'Edema', 'Enlarged Cardiomediastinum', 'Fracture', 'Lung Lesion',
@@ -316,7 +317,8 @@ class Demographic_extraction:
                'StudyDate', 'StudyTime', 'ProcedureCodeSequence_CodeMeaning',
                'ViewCodeSequence_CodeMeaning',
                'PatientOrientationCodeSequence_CodeMeaning', ]]
-
+        
+        # Finally, retruning the extracted dataframe
         return df_core_icu_cxr_fusion
 
 
