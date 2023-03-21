@@ -8,10 +8,16 @@ We here try to replicate the embeddings generation from the [HAIM multimodal dat
 The datasets used to replicate the embeddings generation are publicly available at: [physionet](https://physionet.org/content/haim-multimodal/1.0.1/). 
 
 Download:
-- MIMIC-CXR-JPG - chest radiographs with structured labels v2.0.0 (https://physionet.org/content/mimic-cxr-jpg/2.0.0/)
-- MIMIC-IV v1.0 (https://physionet.org/content/mimiciv/1.0/
+  - MIMIC-CXR-JPG - chest radiographs with structured labels v2.0.0 (https://physionet.org/content/mimic-cxr-jpg/2.0.0/)
+  - MIMIC-IV v1.0 (https://physionet.org/content/mimiciv/1.0/
 
 Copy the unzipped folders  to [csvs](csvs)
+
+Install the requirements under **Python 3.9.13** as following:
+
+```
+$ pip install -r requirements.txt
+```
 
 In order to generate embeddings, we based our codes on subject_id. The user can also opt for stay_id embeddings generation. However, this can generate 
 multiple rows for the same patient in terms of time series analysis. 
