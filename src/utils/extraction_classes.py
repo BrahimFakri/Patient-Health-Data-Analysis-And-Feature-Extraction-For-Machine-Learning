@@ -273,11 +273,9 @@ class Demographic_extraction:
 
         df_core_icu_fusion = df_core_fusion.merge(df_icustays, on=('subject_id', 'hadm_id'))
 
-
         # CXR dataset fusion merge
 
         df_cxr_merged = df_mimic_cxr_chexpert.merge(df_mimic_cxr_metadata, on= ('subject_id', 'study_id'))
-
 
         # Merging Core, ICU and CXR
 
