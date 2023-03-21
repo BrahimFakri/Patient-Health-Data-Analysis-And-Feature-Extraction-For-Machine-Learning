@@ -1,14 +1,9 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
 
 """
-Filename: extraction_functions.py
+Filename: extraction_classes.py
 Author : Brahim Fakri
-Description: This file is used to define functions used for time series embeddings  extraction
-Date of last modification : 2023/03/20
+Description: This file is used to define classes for embeddings  extraction
+Date of last modification : 2023/03/21
 """
 
 
