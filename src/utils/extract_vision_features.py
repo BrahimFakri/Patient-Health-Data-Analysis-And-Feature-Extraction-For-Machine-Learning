@@ -44,6 +44,8 @@ def extract_vision_features(img):
   model = xrv.models.DenseNet(weights = "densenet121-res224-chex")
 
   #process image
+  #https://github.com/mlmed/torchxrayvision/blob/0eafebf36a3f5f30302dff0faaacef5e52243e87/scripts/process_image.py
+  
   img = xrv.datasets.normalize(img, 255)
   img = cv2.resize(img, (224, 224), interpolation = cv2.INTER_AREA)   
   img = img[None, :, :]
