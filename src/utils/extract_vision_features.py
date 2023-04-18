@@ -1,3 +1,37 @@
+"""
+Filename: extract_vision_features.py
+Author : 
+
+Joseph Paul Cohen, Joseph D. Viviano, Paul Bertin, Paul Morrison, Parsa Torabian, Matteo Guarrera, Matthew P Lungren, Akshay Chaudhari, Rupert Brooks, Mohammad Hashir, Hadrien Bertrand
+TorchXRayVision: A library of chest X-ray datasets and models. 
+Medical Imaging with Deep Learning
+https://github.com/mlmed/torchxrayvision, 2020
+
+Description: This file is an adaptation from torchxrayvision used to vision image embeddings  extraction
+Date of last modification : 2023/04/18
+"""
+
+import torchxrayvision as xrv
+
+import skimage
+import cv2
+import torch
+
+import torch.nn.functional as F
+
+import pandas as pd
+import numpy as np
+
+import os
+from os import listdir
+
+import os
+os.chdir('../')
+
+from src.data import constants
+from src.utils import extract_vision_features
+
+
 def extract_vision_features(img):
 
   #Initialize the densefeature_embeddings with an empty list:
