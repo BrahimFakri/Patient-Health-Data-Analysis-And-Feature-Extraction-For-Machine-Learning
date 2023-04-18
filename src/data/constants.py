@@ -2,7 +2,7 @@
 Filename: constants.py
 Author : Brahim Fakri
 Description: This file is used to store constants
-Date of last modification : 2023/03/20
+Date of last modification : 2023/04/18
 """
   
 
@@ -98,4 +98,10 @@ fc_parameters = {"length": None,
 
 # NROWS to avoid memory issues in jupyter notebook
 NROWS = 50000000
+
+
+## Dicom sample images 
+image_path_folder = 'dicom sample images/'
+df_10_dicoms = 'csvs/df_mimic_cxr_metadata_sample_10_dicoms.csv")
+
 
