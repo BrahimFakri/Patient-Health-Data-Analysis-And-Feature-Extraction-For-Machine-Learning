@@ -102,6 +102,6 @@ NROWS = 50000000
 
 ## Dicom sample images 
 image_path_folder = 'dicom sample images/'
-df_10_dicoms = 'csvs/df_mimic_cxr_metadata_sample_10_dicoms.csv")
+df_10_dicoms = 'csvs/df_mimic_cxr_metadata_sample_10_dicoms.csv'
 
 
