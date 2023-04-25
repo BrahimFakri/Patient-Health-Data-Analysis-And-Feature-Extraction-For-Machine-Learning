@@ -33,7 +33,7 @@ Data related to time of events will be spread on multiple rows, and machine lear
 For more details about the different tables and column names, please refere to MIMIC video tutorials at : [MIMIC Tutorial](https://mimic.mit.edu/docs/iv/tutorials/video/)
 
 
-Below is an overview of the different MIMIC modules and their link to different patient movements through the hospital: 
+Below is an overview of the different MIMIC modules and their links to different patients movements through the hospital: 
 
 ![image](https://user-images.githubusercontent.com/119059452/218730593-784ea8a1-cc9c-440e-a30f-9595b2be212b.png)
 
