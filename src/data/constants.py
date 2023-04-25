@@ -103,5 +103,15 @@ NROWS = 50000000
 ## Dicom sample images 
 image_path_folder = 'dicom sample images/'
 df_10_dicoms = 'csvs/df_mimic_cxr_metadata_sample_10_dicoms.csv'
+sample_images = ["074987b9-26c19a32-5d80ebab-28a2fb1c-6191b91f",\
+"53a0e91c-79580b39-f184232b-f105311f-eb2e51d2",\
+"60f2347b-99b4129d-95de2c7b-ee5cb73c-806efa60",\
+"e89d7fd0-52d0afc7-097fc4dc-3b7342d3-14b97733",\
+"2026c1e8-873a009a-a6c9549d-a2e8e77f-5266ac77",\
+"1dfc725a-fb67044b-37c88c4e-e4a80288-18a92be0",\
+"0f33d2cc-cba96c64-8d40983e-4b2a2264-6ff6d3a5",\
+"abea5eb9-b7c32823-3a14c5ca-77868030-69c83139",\
+"43d968ea-b9b838af-5e4a8bef-c5a4808b-04aa4e2c",\
+"457bdad8-c45edc64-452fde8e-f5adda5c-f386693e"]
 
 
