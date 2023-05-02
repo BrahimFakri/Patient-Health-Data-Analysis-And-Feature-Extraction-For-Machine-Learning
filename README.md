@@ -64,7 +64,22 @@ So in order to find the patients who have both icu stays and chest radiology ima
 
 ## 5. Demo
 
-We recommand the user to start by running the notebook ```general tutorial notebook.ipynb``` to be familiarised with the different tables and data in the mimic database.
+We recommand the user to start by running the notebook ```general tutorial notebook.ipynb``` to be familiarised with the different tables and data in the mimic database:
+
+```
+import os
+
+os.chdir('../')
+
+import pandas as pd
+import numpy as np
+
+from pandas import read_csv
+
+from src.data import constants
+```
+
+
 At the end of that notebook, the user will have generated a sample of 10 patients that will be used for remaining of the work.
 
 The second step is to generate features from demographic and time series data. In order to do so, the user should use the notebook ```Demographics_TimeSeries_features_Tutorial.ipynb```
