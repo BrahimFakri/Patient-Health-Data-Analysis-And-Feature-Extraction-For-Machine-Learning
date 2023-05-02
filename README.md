@@ -50,7 +50,7 @@ To have an overview of different links between tables, check the folder[Table di
 
 Below is table in which we summarize important information about the most important tables used in the embeddings generation.
 
-To produce these number, we used the notebook ```general dataset exploration.ipynb``` in the folder [notebooks](OOOO)
+To produce these number, we used the notebook ```general dataset exploration.ipynb``` in the folder [dafdaf](notebooks)
 
 ![image](https://user-images.githubusercontent.com/119059452/218784248-d562515f-7e85-49d7-a359-285e63093aea.png)
 
