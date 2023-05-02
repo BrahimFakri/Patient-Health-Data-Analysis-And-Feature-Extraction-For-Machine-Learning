@@ -62,6 +62,13 @@ Also, we notice that not all patients have chest radiology images: only 65379 un
 So in order to find the patients who have both icu stays and chest radiology images, we ran the notebook ```icu_cxr_patients.ipynb``` and find that the number of patients with both a chest radiology image and an icu stay is:  ```20245```
 
 
+## 5. Demo
+
+We recommand the user to start by running the notebook ```general tutorial notebook.ipynb``` to be familiarised with the different tables and data in the mimic database.
+At the end of that notebook, the user will have generated a sample of 10 patients that will be used for remaining of the work.
+
+The second step is to generate features from demographic and time series data. In order to do so, the user should use the notebook ```Demographics_TimeSeries_features_Tutorial.ipynb```
+
 
 
 
