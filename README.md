@@ -69,7 +69,7 @@ At the end of that notebook, the user will have generated a sample of 10 patient
 
 The second step is to generate features from demographic and time series data. In order to do so, the user should use the notebook ```Demographics_TimeSeries_features_Tutorial.ipynb```.
 
-Example:
+Example of generating chart events features:
 ```
 import os
 os.chdir('../..')
@@ -87,7 +87,7 @@ chart_fusion = pd.concat(chart_fusion, axis=0)
 
 ```
 
-At the end of that notebook, the user will have generated a csv file ```fusion_ts_dem_dataframe.csv```
+At the end of that notebook, the user will have generated a csv file ```fusion_ts_dem_dataframe.csv``` that contains features from ```demographics```, ```chart events```,  ```lab events``` and ```procedure events```. That csv file will be used with the vision features file to create the final features csv file.
 
 
 
