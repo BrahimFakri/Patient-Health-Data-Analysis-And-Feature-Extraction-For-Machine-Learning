@@ -42,7 +42,7 @@ Below is an overview of the different MIMIC modules and their links to different
 ### Relationship between different mimiv core and icu tables
 
 
-![Relationship diagram](https://user-images.githubusercontent.com/119059452/222306118-e92ee85d-18e3-4eaa-99dd-d252dc876735.png)
+To have an overview of different links between tables, check the folder [Table diagrams](Table diagrams)
 
 
 
