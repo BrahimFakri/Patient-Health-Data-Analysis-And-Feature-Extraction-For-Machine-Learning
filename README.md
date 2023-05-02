@@ -87,39 +87,6 @@ os.chdir('../')
 from src.data import constants
 from src.utils import extract_vision_features
 
-#creating empty dataframes to store the vision embeddings and the concatenation:
-df_vision_dense_embeddings_fusion = pd.DataFrame()
-df_vision_predictions_embeddings_fusion = pd.DataFrame()
-vision_embeddings = pd.DataFrame()
-
-
-#iterating through sample file to read dicom_id for each image and process the corresponding image using torchxrayvision:
-for img_id in df_10_dicoms[df_10_dicoms.dicom_id.isin(constants.sample_images)].dicom_id:
-    
-    for root, dirs, files in os.walk(image_path_folder):
-        
-        for name in files:
-            
-            if img_id == name[0:44]: # avoid reading the extension .jpg
-                
-                # image processing and features extraction:
-                img = skimage.io.imread(image_path_folder + name)
-                
-                # embeddings concatenation for both types:
-                df_vision_predictions_embeddings_fusion = df_vision_predictions_embeddings_fusion.append(extract_vision_features(img)[0])
-                df_vision_dense_embeddings_fusion = df_vision_dense_embeddings_fusion.append(extract_vision_features(img)[1])
-        
-
-# combining both embeddings in one dataframe:
-vision_embeddings = pd.concat([ df_vision_predictions_embeddings_fusion , df_vision_dense_embeddings_fusion], axis=1)
-vision_embeddings.insert(0, "subject_id", [element for element in df_10_dicoms["subject_id"].unique()])
-vision_embeddings.insert(1, "img_id", [element for element in constants.sample_images])
-
-#Display extracted vision_embeddings:
-vision_embeddings
-
-
-
 
 ```
 
