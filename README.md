@@ -42,7 +42,7 @@ Below is an overview of the different MIMIC modules and their links to different
 ### Relationship between different mimiv core and icu tables
 
 
-To have an overview of different links between tables, check the folder[Table diagrams](Table diagrams) 
+To have an overview of different links between tables, check the folder[Table diagrams]('Table diagrams') 
 
 
 
@@ -50,7 +50,7 @@ To have an overview of different links between tables, check the folder[Table di
 
 Below is table in which we summarize important information about the most important tables used in the embeddings generation.
 
-To produce these number, we used the notebook ```general dataset exploration.ipynb``` in the folder [dafdaf](notebooks)
+To produce these number, we used the notebook ```general dataset exploration.ipynb``` in the folder [notebooks](notebooks)
 
 ![image](https://user-images.githubusercontent.com/119059452/218784248-d562515f-7e85-49d7-a359-285e63093aea.png)
 
