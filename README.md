@@ -77,6 +77,19 @@ import numpy as np
 from pandas import read_csv
 
 from src.data import constants
+
+#core
+df_patients = read_csv(constants.patients)
+df_patients.head()
+print(len(df_patients["subject_id"].unique()))
+
+#Filter out patient with icu stays and cxr data
+df_mimic_cxr_chexpert = read_csv(constants.mimic_cxr_chexpert)
+df_icustays = read_csv(constants.icustays)
+icu_cxr_patients = pd.Series(list(set(df_mimic_cxr_chexpert["subject_id"]).intersection(set(df_icustays["subject_id"]))))
+icu_cxr_patients_sample10 = icu_cxr_patients.sample(10)
+icu_cxr_patients_sample10.to_csv("csvs/icu_cxr_patients_sample10.csv")
+
 ```
 
 
