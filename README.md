@@ -68,8 +68,9 @@ We recommand the user to start by running the notebook ```general tutorial noteb
 At the end of that notebook, the user will have generated a sample of 10 patients that will be used for remaining of the work.
 
 The second step is to generate features from demographic and time series data. In order to do so, the user should use the notebook ```Demographics_TimeSeries_features_Tutorial.ipynb```.
-```
+
 Example:
+```
 import os
 os.chdir('../..')
 
@@ -86,6 +87,7 @@ chart_fusion = pd.concat(chart_fusion, axis=0)
 
 ```
 
+At the end of that notebook, the user will have generated a csv file ```fusion_ts_dem_dataframe.csv```
 
 
 
