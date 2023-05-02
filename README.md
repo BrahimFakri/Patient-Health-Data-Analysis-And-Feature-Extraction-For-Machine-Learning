@@ -64,36 +64,28 @@ So in order to find the patients who have both icu stays and chest radiology ima
 
 ## 5. Demo
 
-We recommand the user to start by running the notebook ```general tutorial notebook.ipynb``` to be familiarised with the different tables and data in the mimic database:
-
-```
-import torchxrayvision as xrv
-
-import skimage
-import cv2
-import torch
-
-import torch.nn.functional as F
-
-import pandas as pd
-import numpy as np
-
-import os
-from os import listdir
-
-import os
-os.chdir('../')
-
-from src.data import constants
-from src.utils import extract_vision_features
-
-
-```
-
-
+We recommand the user to start by running the notebook ```general tutorial notebook.ipynb``` to be familiarised with the different tables and data in the mimic database.
 At the end of that notebook, the user will have generated a sample of 10 patients that will be used for remaining of the work.
 
-The second step is to generate features from demographic and time series data. In order to do so, the user should use the notebook ```Demographics_TimeSeries_features_Tutorial.ipynb```
+The second step is to generate features from demographic and time series data. In order to do so, the user should use the notebook ```Demographics_TimeSeries_features_Tutorial.ipynb```.
+```
+Example:
+import os
+os.chdir('../..')
+
+from src.data import constants
+from src.utils import extraction_classes
+
+import pandas as pd
+
+chart_fusion = []
+for patient in constants.cohort:
+
+    chart_fusion.append(extraction_classes.Event_extraction(patient).extract_chart_events(patient))
+chart_fusion = pd.concat(chart_fusion, axis=0)
+
+```
+
 
 
 
