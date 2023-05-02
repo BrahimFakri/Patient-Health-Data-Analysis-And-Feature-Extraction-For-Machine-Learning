@@ -64,24 +64,47 @@ icu_cxr_patients_sample10 = 'csvs/icu_cxr_patients_sample10.csv'
 subject_id_example = 10216097
 
 # Chart events of interest
+# This is the original list from the HAIM study. To make the calculations lighter for a tutorial or demo, use the reduced list
+"""
 chart_event_list = ['Heart Rate','Non Invasive Blood Pressure systolic',
                     'Non Invasive Blood Pressure diastolic', 'Non Invasive Blood Pressure mean', 
                     'Respiratory Rate','O2 saturation pulseoxymetry', 
                     'GCS - Verbal Response', 'GCS - Eye Opening', 'GCS - Motor Response'] 
+"""
 
-# Chart events of interest
+# Reduced list of Chart events of interest
+chart_event_list = ['Heart Rate','Non Invasive Blood Pressure systolic'] 
+
+
+# Lab events of interest
+# This is the original list from the HAIM study. To make the calculations lighter for a tutorial or demo, use the reduced list
+"""
 lab_event_list = ['Glucose', 'Potassium', 'Sodium', 'Chloride', 'Creatinine',
            'Urea Nitrogen', 'Bicarbonate', 'Anion Gap', 'Hemoglobin', 'Hematocrit',
            'Magnesium', 'Platelet Count', 'Phosphate', 'White Blood Cells',
            'Calcium, Total', 'MCH', 'Red Blood Cells', 'MCHC', 'MCV', 'RDW', 
                       'Platelet Count', 'Neutrophils', 'Vancomycin']
+"""
+# Reduced list of Lab events of interest
+lab_event_list = ['Glucose', 'Potassium', 'Sodium']
+
+
 
 # Procedure events of interest
+# This is the original list from the HAIM study. To make the calculations lighter for a tutorial or demo, use the reduced list
+"""
 procedure_event_list = ['Foley Catheter', 'PICC Line', 'Intubation', 'Peritoneal Dialysis', 
                             'Bronchoscopy', 'EEG', 'Dialysis - CRRT', 'Dialysis Catheter', 
                             'Chest Tube Removed', 'Hemodialysis']
+"""
+
+# Reduced list of procedure events of interest
+procedure_event_list = ['Foley Catheter', 'PICC Line', 'Intubation']
+
+
 
 # TSFRESH FC PARAMETERS
+# The number of these parameters can be reduced depending on the user's goals
 fc_parameters = {"length": None,
                     "absolute_sum_of_changes": None, 
                     "maximum": None, 
