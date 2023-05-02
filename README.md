@@ -89,6 +89,23 @@ chart_fusion = pd.concat(chart_fusion, axis=0)
 
 At the end of that notebook, the user will have generated a csv file ```fusion_ts_dem_dataframe.csv``` that contains features from ```demographics```, ```chart events```,  ```lab events``` and ```procedure events```. That csv file will be used with the vision features file to create the final features csv file.
 
+The third step is to generate features from image data. In order to do so, the user should use the notebook ```Extract_vision_features_Tutorial.ipynb```.
+At the end of the notebook, the csv file ```fusion_vision.csv``` will be generated.
+
+Then we can use the function ```Generate_Final_Features``` to concatenate all types of features to generate the embeddings file:
+
+```
+# Import the function from the module:
+from src.utils.Generate_Final_Features import Generate_Final_Features
+
+#Call the general extraction function to display results:
+Generate_Final_Features()
+
+#Export results to csv file:
+Generate_Final_Features().to_csv('csvs/Final_Features.csv', index=False)
+```
+
+
 
 
 
