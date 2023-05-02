@@ -137,4 +137,10 @@ sample_images = ["074987b9-26c19a32-5d80ebab-28a2fb1c-6191b91f",\
 "43d968ea-b9b838af-5e4a8bef-c5a4808b-04aa4e2c",\
 "457bdad8-c45edc64-452fde8e-f5adda5c-f386693e"]
 
+##fusion_ts_dem_dataframe.csv that contains features from demographics, chart events, lab events and procedure events
+fusion_ts_dem_dataframe = 'csvs/fusion_ts_dem_dataframe.csv'
+
+##fusion_vision.csv that contains features from images
+fusion_vision_dataframe = 'csvs/fusion_vision.csv'
+
 
