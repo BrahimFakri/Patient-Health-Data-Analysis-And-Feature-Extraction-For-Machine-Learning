@@ -98,10 +98,10 @@ Then we can use the function ```Generate_Final_Features``` to concatenate all ty
 # Import the function from the module:
 from src.utils.Generate_Final_Features import Generate_Final_Features
 
-#Call the general extraction function to display results:
+# Call the general extraction function to display results:
 Generate_Final_Features()
 
-#Export results to csv file:
+# Export results to csv file:
 Generate_Final_Features().to_csv('csvs/Final_Features.csv', index=False)
 ```
 
