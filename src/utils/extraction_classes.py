@@ -310,15 +310,8 @@ class Demographic_extraction:
         df_core_icu_cxr_fusion = df_core_icu_cxr_fusion.drop(['discharge_location'], axis =1)
 
         # Rearranging the fusion dataframe with the right columns order
-        df_core_icu_cxr_fusion = df_core_icu_cxr_fusion.loc[: , ['subject_id', 'hadm_id','stay_id',  'admittime','de_0', 'de_1', 'de_2',
-               'de_3', 'de_4', 'de_5', 'death_status', 'study_id', 'Atelectasis', 'Cardiomegaly', 'Consolidation',
-               'Edema', 'Enlarged Cardiomediastinum', 'Fracture', 'Lung Lesion',
-               'Lung Opacity', 'No Finding', 'Pleural Effusion', 'Pleural Other',
-               'Pneumonia', 'Pneumothorax', 'Support Devices', 'dicom_id',
-               'PerformedProcedureStepDescription', 'ViewPosition', 'Rows', 'Columns',
-               'StudyDate', 'StudyTime', 'ProcedureCodeSequence_CodeMeaning',
-               'ViewCodeSequence_CodeMeaning',
-               'PatientOrientationCodeSequence_CodeMeaning', ]]
+        df_core_icu_cxr_fusion = df_core_icu_cxr_fusion.loc[: , ['subject_id','de_0', 'de_1', 'de_2',
+               'de_3', 'de_4', 'de_5', 'death_status', ]]
         
         # Finally, retruning the extracted dataframe
         return df_core_icu_cxr_fusion
