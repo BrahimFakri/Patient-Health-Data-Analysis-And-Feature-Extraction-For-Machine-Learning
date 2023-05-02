@@ -67,28 +67,59 @@ So in order to find the patients who have both icu stays and chest radiology ima
 We recommand the user to start by running the notebook ```general tutorial notebook.ipynb``` to be familiarised with the different tables and data in the mimic database:
 
 ```
-import os
+import torchxrayvision as xrv
 
-os.chdir('../')
+import skimage
+import cv2
+import torch
+
+import torch.nn.functional as F
 
 import pandas as pd
 import numpy as np
 
-from pandas import read_csv
+import os
+from os import listdir
+
+import os
+os.chdir('../')
 
 from src.data import constants
+from src.utils import extract_vision_features
 
-#core
-df_patients = read_csv(constants.patients)
-df_patients.head()
-print(len(df_patients["subject_id"].unique()))
+#creating empty dataframes to store the vision embeddings and the concatenation:
+df_vision_dense_embeddings_fusion = pd.DataFrame()
+df_vision_predictions_embeddings_fusion = pd.DataFrame()
+vision_embeddings = pd.DataFrame()
 
-#Filter out patient with icu stays and cxr data
-df_mimic_cxr_chexpert = read_csv(constants.mimic_cxr_chexpert)
-df_icustays = read_csv(constants.icustays)
-icu_cxr_patients = pd.Series(list(set(df_mimic_cxr_chexpert["subject_id"]).intersection(set(df_icustays["subject_id"]))))
-icu_cxr_patients_sample10 = icu_cxr_patients.sample(10)
-icu_cxr_patients_sample10.to_csv("csvs/icu_cxr_patients_sample10.csv")
+
+#iterating through sample file to read dicom_id for each image and process the corresponding image using torchxrayvision:
+for img_id in df_10_dicoms[df_10_dicoms.dicom_id.isin(constants.sample_images)].dicom_id:
+    
+    for root, dirs, files in os.walk(image_path_folder):
+        
+        for name in files:
+            
+            if img_id == name[0:44]: # avoid reading the extension .jpg
+                
+                # image processing and features extraction:
+                img = skimage.io.imread(image_path_folder + name)
+                
+                # embeddings concatenation for both types:
+                df_vision_predictions_embeddings_fusion = df_vision_predictions_embeddings_fusion.append(extract_vision_features(img)[0])
+                df_vision_dense_embeddings_fusion = df_vision_dense_embeddings_fusion.append(extract_vision_features(img)[1])
+        
+
+# combining both embeddings in one dataframe:
+vision_embeddings = pd.concat([ df_vision_predictions_embeddings_fusion , df_vision_dense_embeddings_fusion], axis=1)
+vision_embeddings.insert(0, "subject_id", [element for element in df_10_dicoms["subject_id"].unique()])
+vision_embeddings.insert(1, "img_id", [element for element in constants.sample_images])
+
+#Display extracted vision_embeddings:
+vision_embeddings
+
+
+
 
 ```
 
